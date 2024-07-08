@@ -1,4 +1,5 @@
 Actor:
+
 GET http://localhost:8080/actor?id=1 - получить актера по id
 GET http://localhost:8080/allActors - получить список всех актеров
 POST http://localhost:8080/actor - добавить актера 
@@ -22,6 +23,7 @@ DELETE  http://localhost:8080/actorsOfPerformance?actorId=(id актера)&perf
 DELETE http://localhost:8080/actor?id=(существующий id) - удалить актера по id
 
 Hall:
+
 GET http://localhost:8080/hall?id=1  - получить зал по id
 GET http://localhost:8080/allHalls - получить список залов
 POST http://localhost:8080/hall - добавить зал 
@@ -41,7 +43,8 @@ PUT -   изменить данные зала
 
 DELETE http://localhost:8080/hall?id=(существующий  id)   - удалить зал по id
 
-Performance
+Performance:
+
 GET http://localhost:8080/performance?id=1 - получить спектакль по id
 GET http://localhost:8080/allPerformances - получить список спектаклей
 POST  http://localhost:8080/performance - добавить спектакль
