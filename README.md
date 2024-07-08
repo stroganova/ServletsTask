@@ -4,7 +4,7 @@ GET http://localhost:8080/actor?id=1 - получить актера по id
 GET http://localhost:8080/allActors - получить список всех актеров
 POST http://localhost:8080/actor - добавить актера 
 {
-    "firstname": «firrstname",
+    "firstname": «firstname",
     "lastname": "lastname",
     "phoneNumber": "+79345654654"
 }
@@ -17,10 +17,10 @@ PUT  http://localhost:8080/actor  - изменить данные актера
     "phoneNumber": "+79343544654"
 }
 
-POST  http://localhost:8080/actorsOfPerformance?actorId=(id актера)&performanceId=(id спектакля) - добавить актера спектаклю
-DELETE  http://localhost:8080/actorsOfPerformance?actorId=(id актера)&performanceId=(id спектакля) - удалить актера у спектакля
+POST  http://localhost:8080/actorsOfPerformance?actorId=(id актера)&performanceId= (id спектакля) - добавить актера спектаклю
+DELETE  http://localhost:8080/actorsOfPerformance?actorId=(id актера)&performanceId= (id спектакля) - удалить актера у спектакля
 
-DELETE http://localhost:8080/actor?id=(существующий id) - удалить актера по id
+DELETE http://localhost:8080/actor?id= (существующий id) - удалить актера по id
 
 Hall:
 
@@ -41,7 +41,7 @@ PUT -   изменить данные зала
     "phoneNumber": "65456547"
 }
 
-DELETE http://localhost:8080/hall?id=(существующий  id)   - удалить зал по id
+DELETE http://localhost:8080/hall?id= (существующий  id)   - удалить зал по id
 
 Performance:
 
@@ -56,11 +56,11 @@ POST  http://localhost:8080/performance - добавить спектакль
 
 PUT  http://localhost:8080/performance - изменить данные спектакля
 {
-    "id": (существующий id,
+    "id": (существующий id),
     "name": "name",
     "description": "description",
     "hallId": 1
 }
 
 
-DELETE http://localhost:8080/performance?id=(существующий id) -удалить по id
+DELETE http://localhost:8080/performance?id= (существующий id) -удалить по id
