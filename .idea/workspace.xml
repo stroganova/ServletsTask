@@ -9,45 +9,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d245111-e83a-496e-9ed1-fa674cac214e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8e6d3b70c9f5b02570779b0441540d45eceb0ded" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/e/8e6d3b70c9f5b02570779b0441540d45eceb0ded" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dao/ActorDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dao/Dao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dao/HallDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dao/PerformanceDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dto/ActorDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dto/HallDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dto/PerformanceDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/entity/ActorEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/entity/HallEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/entity/PerformanceEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/exception/DaoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/service/ActorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/service/HallService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/service/PerformanceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/servlet/HelloServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/servlet/PerformanceServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/util/ConnectionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/util/PropertiesUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+    <list default="true" id="2d245111-e83a-496e-9ed1-fa674cac214e" name="Changes" comment="created entity, dao, dto, service and servlet layers">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dto/ActorDtoWithPerformances.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dto/PerformanceDtoWithActors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dto/SimpleActorDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/exception/DatabaseConnectionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/exception/DatabaseDriverLoaderException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/exception/JsonPrintingException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/exception/PropertiesLoaderException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/mapper/ActorWithPerformancesMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/mapper/HallMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/mapper/Mapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/mapper/PerformanceWithActorsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/mapper/SimpleActorMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/mapper/SimplePerformanceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/servlet/ActorServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/servlet/ActorsPerformancesServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/servlet/AllActorsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/servlet/AllHallsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/servlet/AllPerformancesServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/servlet/HallServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/util/ServletUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/init.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/me/nikastroganova/astoncourse/servletstask/AbstractTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/me/nikastroganova/astoncourse/servletstask/TestConnectionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/me/nikastroganova/astoncourse/servletstask/service/PerformanceServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/test.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8e6d3b70c9f5b02570779b0441540d45eceb0ded" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/e/8e6d3b70c9f5b02570779b0441540d45eceb0ded" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dao/ActorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dao/impl/ActorDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dao/Dao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dao/HallDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dao/impl/HallDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dao/PerformanceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dao/impl/PerformanceDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dto/ActorDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dto/HallDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dto/HallDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dto/PerformanceDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/dto/SimplePerformanceDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/entity/ActorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/entity/Actor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/entity/HallEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/entity/Hall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/entity/PerformanceEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/entity/Performance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/service/ActorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/service/ActorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/service/HallService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/service/HallService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/service/PerformanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/service/PerformanceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/servlet/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/servlet/PerformanceServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/servlet/PerformanceServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/util/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/util/ConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/util/PropertiesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/util/PropertiesUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +70,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -65,6 +78,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -90,29 +107,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Tomcat Server.LocalTomcat.executor": "Run",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.ServletsTask [test].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.LocalTomcat.executor&quot;: &quot;Run&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="me.nikastroganova.astoncourse.servletstask.util" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="me.nikastroganova.astoncourse.servletstask.util" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="LocalTomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.24" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
@@ -206,8 +236,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
@@ -228,8 +258,34 @@
       <workItem from="1717346674247" duration="1775000" />
       <workItem from="1717350174783" duration="1035000" />
       <workItem from="1717351967972" duration="635000" />
-      <workItem from="1717354746421" duration="10603000" />
+      <workItem from="1717354746421" duration="14009000" />
+      <workItem from="1717414970221" duration="2642000" />
+      <workItem from="1717445498537" duration="7972000" />
+      <workItem from="1717549340637" duration="3743000" />
+      <workItem from="1718361135425" duration="432000" />
+      <workItem from="1718481968890" duration="5201000" />
+      <workItem from="1718641677674" duration="500000" />
+      <workItem from="1718830849316" duration="12436000" />
+      <workItem from="1719232206777" duration="23680000" />
+      <workItem from="1719612148214" duration="10408000" />
+      <workItem from="1720004791424" duration="860000" />
+      <workItem from="1720020562562" duration="838000" />
+      <workItem from="1720029872617" duration="153000" />
+      <workItem from="1720073540947" duration="573000" />
+      <workItem from="1720117022561" duration="146000" />
+      <workItem from="1720160738768" duration="26000" />
+      <workItem from="1720271369878" duration="6434000" />
+      <workItem from="1720419000252" duration="3740000" />
     </task>
+    <task id="LOCAL-00001" summary="created entity, dao, dto, service and servlet layers">
+      <option name="closed" value="true" />
+      <created>1717375024361</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717375024361</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,20 +302,8 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/service/PerformanceService.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/me/nikastroganova/astoncourse/servletstask/servlet/PerformanceServlet.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="created entity, dao, dto, service and servlet layers" />
+    <option name="LAST_COMMIT_MESSAGE" value="created entity, dao, dto, service and servlet layers" />
   </component>
 </project>

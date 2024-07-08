@@ -5,7 +5,9 @@ import lombok.Value;
 
 @Value
 @Builder
-public class ActorDto {
+public class SimplePerformanceDto {
     Integer id;
     String name;
+    String description;
+    Integer hallId;
 }

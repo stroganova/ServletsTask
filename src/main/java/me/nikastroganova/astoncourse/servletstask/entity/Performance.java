@@ -3,13 +3,14 @@ package me.nikastroganova.astoncourse.servletstask.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
-public class PerformanceEntity {
+public class Performance {
     private Integer id;
     private String name;
-    private Integer duration;
-    private String intermission;
-    private String requisite;
-    private Integer hallId;
+    private String description;
+    private Hall hall;
+    private List<Actor> actors;
 }

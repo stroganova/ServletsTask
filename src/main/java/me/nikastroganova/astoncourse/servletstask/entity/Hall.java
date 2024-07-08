@@ -5,9 +5,9 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class ActorEntity {
+public class Hall {
     private Integer id;
-    private String firstName;
-    private String lastName;
+    private String name;
+    private String address;
     private String phoneNumber;
 }

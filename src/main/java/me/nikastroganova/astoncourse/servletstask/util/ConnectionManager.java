@@ -1,5 +1,8 @@
 package me.nikastroganova.astoncourse.servletstask.util;
 
+import me.nikastroganova.astoncourse.servletstask.exception.DatabaseDriverLoaderException;
+import me.nikastroganova.astoncourse.servletstask.exception.DatabaseConnectionException;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -18,7 +21,7 @@ public final class ConnectionManager {
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseDriverLoaderException(e);
         }
     }
 
@@ -33,7 +36,7 @@ public final class ConnectionManager {
                     PropertiesUtil.get((PASSWORD_KEY))
             );
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseConnectionException(e);
         }
     }
 

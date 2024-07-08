@@ -1,7 +1,7 @@
-package me.nikastroganova.astoncourse.servletstask.dao;
+package me.nikastroganova.astoncourse.servletstask.dao.impl;
 
-import me.nikastroganova.astoncourse.servletstask.entity.ActorEntity;
-import me.nikastroganova.astoncourse.servletstask.entity.HallEntity;
+import me.nikastroganova.astoncourse.servletstask.dao.Dao;
+import me.nikastroganova.astoncourse.servletstask.entity.Hall;
 import me.nikastroganova.astoncourse.servletstask.exception.DaoException;
 import me.nikastroganova.astoncourse.servletstask.util.ConnectionManager;
 
@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class HallDao implements Dao<Integer, HallEntity>{
+public class HallDaoImpl implements Dao<Integer, Hall> {
 
-    private static final HallDao INSTANCE = new HallDao();
+    private static final HallDaoImpl INSTANCE = new HallDaoImpl();
 
     private static final String DELETE_SQL = """
         DELETE FROM halls
@@ -22,39 +22,38 @@ public class HallDao implements Dao<Integer, HallEntity>{
         """;
     private static final String UPDATE_SQL = """
         UPDATE halls
-        SET name = ?,
-            address = ?,
-            phone = ?,
-            manager_name = ?
+        SET hall_name = ?,
+            hall_address = ?,
+            hall_phone = ?
         WHERE id = ?
         """;
     private static final String SAVE_SQL = """
-        INSERT INTO halls (id, name, address, phone, manager_name)
-        VALUES (?, ?, ?, ?, ?)
+        INSERT INTO halls (hall_name, hall_address, hall_phone)
+        VALUES (?, ?, ?)
         """;
     private static final String FIND_BY_ID_SQL = """
-        SELECT id, name, address, phone, manager_name
+        SELECT id, hall_name, hall_address, hall_phone
         FROM halls
         WHERE id = ?
         """;
     private static final String FIND_ALL_SQL = """
-        SELECT id, name, address, phone, manager_name
+        SELECT id, hall_name, hall_address, hall_phone
         FROM halls
         """;
 
-    private HallDao(){
+    private HallDaoImpl(){
     }
 
-    public HallDao getInstance() {
+    public static HallDaoImpl getInstance() {
         return INSTANCE;
     }
 
     @Override
-    public List<HallEntity> findAll() {
+    public List<Hall> findAll() {
         try (var connection = ConnectionManager.getConnection();
              var preparedStatement = connection.prepareStatement(FIND_ALL_SQL)) {
             var resultSet = preparedStatement.executeQuery();
-            List<HallEntity> halls = new ArrayList<>();
+            List<Hall> halls = new ArrayList<>();
             while(resultSet.next()) {
                 halls.add(buildHall(resultSet));
             }
@@ -66,18 +65,18 @@ public class HallDao implements Dao<Integer, HallEntity>{
     }
 
     @Override
-    public Optional<HallEntity> findById(Integer id) {
+    public Optional<Hall> findById(Integer id) {
         try (var connection = ConnectionManager.getConnection();
              var preparedStatement = connection.prepareStatement(FIND_BY_ID_SQL)) {
             preparedStatement.setInt(1, id);
 
             var resultSet = preparedStatement.executeQuery();
 
-            HallEntity hallEntity = null;
+            Hall hall = null;
             if(resultSet.next()) {
-                hallEntity = buildHall(resultSet);
+                hall = buildHall(resultSet);
             }
-            return Optional.ofNullable(hallEntity);
+            return Optional.ofNullable(hall);
         }
         catch (SQLException e) {
             throw new DaoException(e);
@@ -97,14 +96,13 @@ public class HallDao implements Dao<Integer, HallEntity>{
     }
 
     @Override
-    public void update(HallEntity hallEntity) {
+    public void update(Hall hall) {
         try (var connection = ConnectionManager.getConnection();
              var preparedStatement = connection.prepareStatement(UPDATE_SQL)) {
-            preparedStatement.setString(1, hallEntity.getName());
-            preparedStatement.setString(2, hallEntity.getAddress());
-            preparedStatement.setString(3, hallEntity.getPhoneNumber());
-            preparedStatement.setString(4, hallEntity.getManagerName());
-            preparedStatement.setInt(5, hallEntity.getId());
+            preparedStatement.setString(1, hall.getName());
+            preparedStatement.setString(2, hall.getAddress());
+            preparedStatement.setString(3, hall.getPhoneNumber());
+            preparedStatement.setInt(4, hall.getId());
 
             preparedStatement.executeUpdate();
         }
@@ -114,35 +112,47 @@ public class HallDao implements Dao<Integer, HallEntity>{
     }
 
     @Override
-    public HallEntity save(HallEntity hallEntity) {
+    public Hall save(Hall hall) {
         try (var connection = ConnectionManager.getConnection();
              var preparedStatement = connection.prepareStatement(SAVE_SQL, Statement.RETURN_GENERATED_KEYS)) {
-            preparedStatement.setInt(1, hallEntity.getId());
-            preparedStatement.setString(2, hallEntity.getName());
-            preparedStatement.setString(3, hallEntity.getAddress());
-            preparedStatement.setString(4, hallEntity.getPhoneNumber());
-            preparedStatement.setString(5, hallEntity.getManagerName());
+            preparedStatement.setString(1, hall.getName());
+            preparedStatement.setString(2, hall.getAddress());
+            preparedStatement.setString(3, hall.getPhoneNumber());
 
             preparedStatement.executeUpdate();
 
             var generatedKeys = preparedStatement.getGeneratedKeys();
             if (generatedKeys.next())
-                hallEntity.setId(generatedKeys.getInt("id"));
-            return hallEntity;
+                hall.setId(generatedKeys.getInt("id"));
+            return hall;
         }
         catch (SQLException e) {
             throw new DaoException(e);
         }
-
     }
 
-    private HallEntity buildHall(ResultSet resultSet) throws SQLException {
-        return new HallEntity(
+    @Override
+    public boolean isExist(Integer id) {
+        try (var connection = ConnectionManager.getConnection();
+             var preparedStatement = connection.prepareStatement(FIND_BY_ID_SQL)) {
+            preparedStatement.setInt(1, id);
+            var resultSet = preparedStatement.executeQuery();
+            if(resultSet.next()) {
+                return true;
+            }
+            return false;
+        }
+        catch (SQLException e) {
+            throw new DaoException(e);
+        }
+    }
+
+    private Hall buildHall(ResultSet resultSet) throws SQLException {
+        return new Hall(
                 resultSet.getInt("id"),
-                resultSet.getString("name"),
-                resultSet.getString("address"),
-                resultSet.getString("phone"),
-                resultSet.getString("manager_name")
+                resultSet.getString("hall_name"),
+                resultSet.getString("hall_address"),
+                resultSet.getString("hall_phone")
         );
     }
 

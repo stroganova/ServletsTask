@@ -8,4 +8,6 @@ import lombok.Value;
 public class HallDto {
     Integer id;
     String name;
+    String address;
+    String phoneNumber;
 }

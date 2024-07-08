@@ -1,5 +1,7 @@
 package me.nikastroganova.astoncourse.servletstask.util;
 
+import me.nikastroganova.astoncourse.servletstask.exception.PropertiesLoaderException;
+
 import java.io.IOException;
 import java.util.Properties;
 
@@ -18,7 +20,7 @@ public final class PropertiesUtil {
         try (var inputStream = PropertiesUtil.class.getClassLoader().getResourceAsStream("application.properties")) {
             PROPERTIES.load(inputStream);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new PropertiesLoaderException(e);
         }
     }
 
